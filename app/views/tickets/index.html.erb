@@ -1,0 +1,37 @@
+<h1>Lista de Ingressos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Lugar #</th>
+      <th>Endereço</th>
+      <th>Valor Pago</th>
+      <th>E-mail</th>
+      <th>Telefone</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.name %></td>
+        <td><%= ticket.seat_id_seq %></td>
+        <td><%= ticket.address %></td>
+        <td><%= ticket.price_paid %></td>
+        <td><%= ticket.email_address %></td>
+        <td><%= ticket.phone %></td>
+        <td><%= link_to 'Visualizar', ticket %></td>
+        <td><%= link_to 'Editar', edit_ticket_path(ticket) %></td>
+        <td><%= link_to 'Excluir', ticket, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Ingresso', new_ticket_path %>

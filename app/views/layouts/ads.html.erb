@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtmll/DTD/xhtmll-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Anúncios: <%= controller.action_name %> </title>
+	<%= stylesheet_link_tag 'default.css' %>
+</head>
+<body>
+	<div id="wrapper" >
+		<div id="header">
+			<div>
+
+				<h1>MeBay</h1>
+				<ul id="nav">
+					<li><a href="/ads/">All Ads</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="content">
+			<%= yield %>
+		</div>
+		<div id="clearfooter"></div>
+	</div>
+	<div id="footer"></div>
+</body>
+</html>
+<!-- isso é um modelo de página. Os modelos de página contém muita coisa, eles já tem todos os html padronizados neles mesmos. Então, é por isso que os modelos(templates) não precisam mais dessa padronizaçã. Já que eu já tenho um formato que pode fornecer a padronização, eu preciso ter somente o conteúdo principal dentro dos meus templates. Assim, conseguimos manter o princípio do rails: NÃO SEJA REPETITIVO --!>
