@@ -1,7 +1,8 @@
-
-	<h1>Todos os Anúncios</h1>
+<h1>Todos os Anúncios</h1>
 	<ul>
 		<% for ad in @ads %>
-		<li><a href="/ads/<%= ad.id %>"><%= ad.name %> </a> </li>
+		<li><a href="/ads/<%= ad.id %>"><%= ad.name %> </a> 
+			<%= link_to('[Deletar]', ads_path(ad.id), method: :delete, data: { confirm:'Tem certeza?'}) %>
+		</li>
 		<% end %>
 	</ul>

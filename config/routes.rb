@@ -1,6 +1,11 @@
 Tickets::Application.routes.draw do
   
-  resources :ads, :except=> [:edit, :update, :destroy]
+  resources :client_workouts
+  get 'client_workouts/find', :to => 'client_workouts#find'
+  resources :destroy
+  resources :edit
+  resources :update
+  resources :ads
   resources :application
   resources :events
   resources :tickets

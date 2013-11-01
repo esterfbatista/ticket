@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130912031438) do
+ActiveRecord::Schema.define(version: 20130930185508) do
 
   create_table "ads", force: true do |t|
     t.string   "name"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20130912031438) do
     t.integer  "seller_id"
     t.string   "email"
     t.string   "img_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "client_workouts", force: true do |t|
+    t.string   "client_name"
+    t.string   "trainer"
+    t.integer  "duration_mins"
+    t.date     "date_of_workout"
+    t.decimal  "paid_amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
